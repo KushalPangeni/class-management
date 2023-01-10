@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "26351411794",
+    "project_id": "thcms-fe68c",
+    "storage_bucket": "thcms-fe68c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26351411794:android:8923160ee9a4b1cc7df58b",
+        "android_client_info": {
+          "package_name": "com.kushal.class_management"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26351411794-249kh0i23tnno5kicnujmatoih58abdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpfMrYmonLzm5e3oOgVLNsiLeApM12Xsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26351411794-249kh0i23tnno5kicnujmatoih58abdk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
