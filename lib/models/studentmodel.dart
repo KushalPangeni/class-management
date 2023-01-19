@@ -12,7 +12,7 @@ class Student {
   String email;
   String username;
   //for photo
-
+//constructor
   Student(
       {this.id = '',
       required this.firstname,
@@ -37,6 +37,19 @@ class Student {
         'email': email,
         'username': username
       };
+
+  static Student fromJson(Map<String, dynamic> json) {
+    return Student(
+        firstname: json['firstname'],
+        lastname: json["lastname"],
+        phone: json["phone"],
+        address: json["address"],
+        gender: json["gender"],
+        birthday: json["birthday"],
+        srn: json["srn"],
+        email: json["email"],
+        username: json['username']);
+  }
 }
 
 Future createUser(
