@@ -91,15 +91,19 @@ class _TimetableSectionState extends State<TimetableSection> {
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
-                          Row(
-                            children: [
-                              Icon(Icons.person),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text('ADD TIMETABLE',
-                                  style: GoogleFonts.openSans(textStyle: style))
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Icon(Icons.person),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text('ADD TIMETABLE',
+                                    style: GoogleFonts.openSans(
+                                        textStyle: style, fontSize: 17))
+                              ],
+                            ),
                           ),
                           Divider(
                             height: 3,
@@ -112,16 +116,21 @@ class _TimetableSectionState extends State<TimetableSection> {
                               Expanded(
                                   child: Card(
                                 color: Colors.teal[50],
-                                child: DropdownButtonHideUnderline(
-                                  //class ko lagi
-                                  child: DropdownButton<String>(
-                                    value: valueOfClass,
-                                    isExpanded: true,
-                                    items:
-                                        classes.map(buildClassesItems).toList(),
-                                    onChanged: (value) => setState(() {
-                                      this.valueOfClass = value;
-                                    }),
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                                  child: DropdownButtonHideUnderline(
+                                    //class ko lagi
+                                    child: DropdownButton<String>(
+                                      value: valueOfClass,
+                                      isExpanded: true,
+                                      items: classes
+                                          .map(buildClassesItems)
+                                          .toList(),
+                                      onChanged: (value) => setState(() {
+                                        this.valueOfClass = value;
+                                      }),
+                                    ),
                                   ),
                                 ),
                               )),
@@ -134,16 +143,21 @@ class _TimetableSectionState extends State<TimetableSection> {
                                 //   border: Border.all(
                                 //       color: Colors.green, width: 0.8),
                                 // ),
-                                child: DropdownButtonHideUnderline(
-                                  //section
-                                  child: DropdownButton<String>(
-                                    value: valueOfSection,
-                                    isExpanded: true,
-                                    items:
-                                        section.map(buildSectionItems).toList(),
-                                    onChanged: (value) => setState(() {
-                                      this.valueOfSection = value;
-                                    }),
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                                  child: DropdownButtonHideUnderline(
+                                    //section
+                                    child: DropdownButton<String>(
+                                      value: valueOfSection,
+                                      isExpanded: true,
+                                      items: section
+                                          .map(buildSectionItems)
+                                          .toList(),
+                                      onChanged: (value) => setState(() {
+                                        this.valueOfSection = value;
+                                      }),
+                                    ),
                                   ),
                                 ),
                               )),
@@ -157,15 +171,19 @@ class _TimetableSectionState extends State<TimetableSection> {
                               Expanded(
                                 child: Card(
                                   color: Colors.teal[50],
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                      hintText: 'Subject',
-                                      labelStyle: TextStyle(
-                                          color: Colors.black, fontSize: 18),
-                                      border: InputBorder.none,
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        hintText: 'Subject',
+                                        labelStyle: TextStyle(
+                                            color: Colors.black, fontSize: 18),
+                                        border: InputBorder.none,
+                                      ),
+                                      keyboardType: TextInputType.name,
+                                      // maxLength: 25,
                                     ),
-                                    keyboardType: TextInputType.name,
-                                    // maxLength: 25,
                                   ),
                                 ),
                               ),
@@ -174,14 +192,18 @@ class _TimetableSectionState extends State<TimetableSection> {
                                 //day
                                 child: Card(
                                   color: Colors.teal[50],
-                                  child: DropdownButton<String>(
-                                    //days
-                                    value: valueOfDays,
-                                    isExpanded: true,
-                                    items: days.map(buildDaysItems).toList(),
-                                    onChanged: (value) => setState(() {
-                                      this.valueOfDays = value;
-                                    }),
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                                    child: DropdownButton<String>(
+                                      //days
+                                      value: valueOfDays,
+                                      isExpanded: true,
+                                      items: days.map(buildDaysItems).toList(),
+                                      onChanged: (value) => setState(() {
+                                        this.valueOfDays = value;
+                                      }),
+                                    ),
                                   ),
                                 ),
                               )),
@@ -203,7 +225,12 @@ class _TimetableSectionState extends State<TimetableSection> {
                                   child: Row(
                                     //Start time
                                     children: [
-                                      Expanded(child: Text(getStartTime())),
+                                      Expanded(
+                                          child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            4, 0, 0, 0),
+                                        child: Text(getStartTime()),
+                                      )),
                                       Expanded(
                                         child: IconButton(
                                           icon: Icon(Icons.timer_outlined),
@@ -226,7 +253,12 @@ class _TimetableSectionState extends State<TimetableSection> {
                                   child: Row(
                                     //end time
                                     children: [
-                                      Expanded(child: Text(getEndTime())),
+                                      Expanded(
+                                          child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            4, 0, 0, 0),
+                                        child: Text(getEndTime()),
+                                      )),
                                       Expanded(
                                           child: IconButton(
                                               icon: Icon(Icons.timer_outlined),
@@ -244,29 +276,46 @@ class _TimetableSectionState extends State<TimetableSection> {
                           //For teacher hai
                           Card(
                             color: Colors.teal[50],
-                            child: TextField(
-                              decoration: InputDecoration(
-                                hintText: ' Teacher Name',
-                                // labelText: 'Teacher name',
-                                labelStyle: TextStyle(
-                                    color: Colors.black, fontSize: 18),
-                                border: InputBorder.none,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'Teacher Name',
+                                  // labelText: 'Teacher name',
+                                  labelStyle: TextStyle(
+                                      color: Colors.black, fontSize: 18),
+                                  border: InputBorder.none,
+                                ),
+                                keyboardType: TextInputType.name,
+                                // maxLength: 25,
                               ),
-                              keyboardType: TextInputType.name,
-                              // maxLength: 25,
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Container(
-                      height: 60,
-                      width: 150,
-                      padding: EdgeInsets.all(10),
-                      child: ElevatedButton(
-                          onPressed: () {}, child: Text('Submit')))
+                  // SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 40,
+                        width: 90,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(14)),
+                        child: const Center(
+                          child: Text(
+                            "Submit",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               )),
         ],

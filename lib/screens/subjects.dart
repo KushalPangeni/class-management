@@ -60,16 +60,19 @@ class _SubjectSectionState extends State<SubjectSection> {
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            Row(
-                              children: [
-                                Icon(Icons.person),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Text('ADD SUBJECT',
-                                    style:
-                                        GoogleFonts.openSans(textStyle: style))
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.person),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text('ADD SUBJECT',
+                                      style: GoogleFonts.openSans(
+                                          textStyle: style, fontSize: 17))
+                                ],
+                              ),
                             ),
                             Divider(
                               height: 3,
@@ -82,52 +85,56 @@ class _SubjectSectionState extends State<SubjectSection> {
                                 Expanded(
                                   child: Card(
                                     color: Colors.teal[50],
-                                    child: TextFormField(
-                                      validator: (value) {
-                                        if (value!.isEmpty) {
-                                          return "Enter subject name";
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                      decoration: InputDecoration(
-                                        // label: Row(
-                                        //   children: const [
-                                        //     Icon(Icons.person),
-                                        //     Text('  First Name')
-                                        //   ],
-                                        // ),
-                                        hintText: ' Subject Name',
-                                        // labelText: 'Subject name',
-                                        labelStyle: TextStyle(
-                                            color: Colors.black, fontSize: 18),
-                                        border: InputBorder.none,
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                                      child: TextFormField(
+                                        validator: (value) {
+                                          if (value!.isEmpty) {
+                                            return "Enter subject name";
+                                          } else {
+                                            return null;
+                                          }
+                                        },
+                                        decoration: InputDecoration(
+                                          hintText: 'Subject Name',
+                                          // labelText: 'Subject name',
+                                          labelStyle: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 18),
+                                          border: InputBorder.none,
+                                        ),
+                                        keyboardType: TextInputType.name,
+                                        // maxLength: 25,
                                       ),
-                                      keyboardType: TextInputType.name,
-                                      // maxLength: 25,
                                     ),
                                   ),
                                 ),
                                 Expanded(
                                   child: Card(
                                     color: Colors.teal[50],
-                                    child: TextFormField(
-                                      validator: (value) {
-                                        if (value!.isEmpty) {
-                                          return "Enter subject code";
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                      decoration: InputDecoration(
-                                        hintText: ' Subject Code',
-                                        // labelText: 'Subject Code',
-                                        labelStyle: TextStyle(
-                                            color: Colors.black, fontSize: 18),
-                                        border: InputBorder.none,
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                                      child: TextFormField(
+                                        validator: (value) {
+                                          if (value!.isEmpty) {
+                                            return "Enter subject code";
+                                          } else {
+                                            return null;
+                                          }
+                                        },
+                                        decoration: InputDecoration(
+                                          hintText: 'Subject Code',
+                                          // labelText: 'Subject Code',
+                                          labelStyle: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 18),
+                                          border: InputBorder.none,
+                                        ),
+                                        keyboardType: TextInputType.name,
+                                        // maxLength: 25,
                                       ),
-                                      keyboardType: TextInputType.name,
-                                      // maxLength: 25,
                                     ),
                                   ),
                                 ),
@@ -147,16 +154,20 @@ class _SubjectSectionState extends State<SubjectSection> {
                                       //   border: Border.all(
                                       //       color: Colors.green, width: 0.8),
                                       // ),
-                                      child: DropdownButtonHideUnderline(
-                                        child: DropdownButton<String>(
-                                          value: value,
-                                          isExpanded: true,
-                                          items: items
-                                              .map(buildMenuItems)
-                                              .toList(),
-                                          onChanged: (value) => setState(() {
-                                            this.value = value;
-                                          }),
+                                      child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            4, 0, 0, 0),
+                                        child: DropdownButtonHideUnderline(
+                                          child: DropdownButton<String>(
+                                            value: value,
+                                            isExpanded: true,
+                                            items: items
+                                                .map(buildMenuItems)
+                                                .toList(),
+                                            onChanged: (value) => setState(() {
+                                              this.value = value;
+                                            }),
+                                          ),
                                         ),
                                       )),
                                 ),
@@ -169,16 +180,21 @@ class _SubjectSectionState extends State<SubjectSection> {
                                   //   border: Border.all(
                                   //       color: Colors.green, width: 0.8),
                                   // ),
-                                  child: DropdownButtonHideUnderline(
-                                    child: DropdownButton<String>(
-                                      value: valuee,
-                                      isExpanded: true,
-                                      items:
-                                          section.map(buildMenuItems1).toList(),
-                                      onChanged: (value) => setState(() {
-                                        // ignore: unnecessary_this
-                                        this.valuee = value;
-                                      }),
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                                    child: DropdownButtonHideUnderline(
+                                      child: DropdownButton<String>(
+                                        value: valuee,
+                                        isExpanded: true,
+                                        items: section
+                                            .map(buildMenuItems1)
+                                            .toList(),
+                                        onChanged: (value) => setState(() {
+                                          // ignore: unnecessary_this
+                                          this.valuee = value;
+                                        }),
+                                      ),
                                     ),
                                   ),
                                 )),
@@ -189,45 +205,66 @@ class _SubjectSectionState extends State<SubjectSection> {
                             ),
                             Card(
                               color: Colors.teal[50],
-                              child: TextFormField(
-                                validator: (value) {
-                                  if (value!.isEmpty) {
-                                    return "Enter Description";
-                                  } else {
-                                    return null;
-                                  }
-                                },
-                                decoration: InputDecoration(
-                                  // labelText: 'Description',
-                                  hintText: 'Description',
-                                  labelStyle: TextStyle(
-                                      color: Colors.black, fontSize: 18),
-                                  border: InputBorder.none,
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                                child: TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return "Enter Description";
+                                    } else {
+                                      return null;
+                                    }
+                                  },
+                                  decoration: InputDecoration(
+                                    // labelText: 'Description',
+                                    hintText: 'Description',
+                                    labelStyle: TextStyle(
+                                        color: Colors.black, fontSize: 18),
+                                    border: InputBorder.none,
+                                  ),
+                                  keyboardType: TextInputType.name,
+                                  maxLength: 250,
+                                  maxLines: 5,
                                 ),
-                                keyboardType: TextInputType.name,
-                                maxLength: 250,
-                                maxLines: 5,
                               ),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    Container(
-                        height: 60,
-                        width: 150,
-                        padding: EdgeInsets.all(10),
-                        child: ElevatedButton(
-                            onPressed: () {
-                              final isValidForm =
-                                  formKey.currentState!.validate();
-                              if (isValidForm) {
-                                log('Validated');
-                              } else {
-                                log('Not validate data');
-                              }
-                            },
-                            child: Text('Submit')))
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: InkWell(
+                        onTap: () {
+                          final isValidForm = formKey.currentState!.validate();
+                          if (isValidForm) {
+                            log('Validated');
+                          } else {
+                            log('Not validate data');
+                          }
+                        },
+                        child: Container(
+                          height: 40,
+                          width: 90,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(14)),
+                          child: const Center(
+                            child: Text(
+                              "Submit",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    // Container(
+                    //     height: 60,
+                    //     width: 150,
+                    //     padding: EdgeInsets.all(10),
+                    //     child: ElevatedButton(
+                    //         onPressed: () {}, child: Text('Submit')))
                   ],
                 )),
           ],

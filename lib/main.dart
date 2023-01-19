@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:class_management/screens/login_page.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,11 +21,23 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        // backgroundColor: Colors.amber,
-        // cardColor: Colors.teal
-        // ,
-        primarySwatch: Colors.teal,
-      ),
+          appBarTheme: AppBarTheme(
+            systemOverlayStyle:
+                SystemUiOverlayStyle(statusBarColor: Colors.orange[200]),
+            titleSpacing: 0,
+            iconTheme: IconThemeData(color: Colors.black),
+            color: Colors.orange[200],
+            elevation: 0,
+            titleTextStyle: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+            ),
+          ),
+          // primarySwatch: Colors.teal,
+          cardColor: Colors.orange[100],
+          shadowColor: Colors.orange,
+          iconTheme: IconThemeData(color: Colors.black),
+          scaffoldBackgroundColor: Colors.orange[200]),
       home: SafeArea(
         child: FutureBuilder(
             future: _initialization,

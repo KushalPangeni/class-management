@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:class_management/screens/dashboard.dart';
 import 'package:class_management/screens/login_page.dart';
@@ -20,40 +18,77 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+        backgroundColor: Colors.orange[50],
         child: SafeArea(
-      child: SingleChildScrollView(
-        //SingleChildScrollView ko replace ma ListView use garda pani hunxa
-        //tara ListView ma chahi children hunxa Column use garna pardaina
-        child: Column(children: [
-          UserAccountsDrawerHeader(
-              accountName: const Text('Kushal Pangeni'),
-              accountEmail: const Text('kushalreigns54@gmail.com'),
-              currentAccountPicture: buildheader(context)
-              // CircleAvatar(
-              //   // backgroundColor: Colors.,
-              //   child: FittedBox(child: Text('Circle Avatar')),
-              // ),
+          child: SingleChildScrollView(
+            //SingleChildScrollView ko replace ma ListView use garda pani hunxa
+            //tara ListView ma chahi children hunxa Column use garna pardaina
+            child: Column(children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 280,
+                  // height: 70,
+                  decoration: BoxDecoration(
+                      color: Colors.orange[200],
+                      borderRadius: BorderRadius.circular(14)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        buildheader(context),
+                        const Padding(
+                          padding: EdgeInsets.fromLTRB(0, 8, 0, 2.0),
+                          child: Text(
+                            'Kushal Pangeni',
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                        const Text("kushalpangeni03@gmail.com")
+                      ],
+                    ),
+                  ),
+                  // UserAccountsDrawerHeader(
+                  //     accountName: const Text('Kushal Pangeni'),
+                  //     accountEmail: const Text('kushalreigns54@gmail.com'),
+                  //     currentAccountPicture: buildheader(context)
+                  //     // CircleAvatar(
+                  //     //   // backgroundColor: Colors.,
+                  //     //   child: FittedBox(child: Text('Circle Avatar')),
+                  //     // ),
+                  //     ),
+                ),
               ),
-          // buildheader(context),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: BackdropFilter(
-              child: Container(
-                decoration: const BoxDecoration(color: Colors.white),
-                child: buildMenuList(context),
+              // buildheader(context),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.orange[200],
+                        borderRadius: BorderRadius.circular(14)),
+                    child: buildMenuList(context),
+                  ),
+                ),
               ),
-              filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-            ),
+            ]),
           ),
-        ]),
-      ),
-    ));
+        ));
   }
 }
 
 Widget buildheader(BuildContext context) {
-  return const CircleAvatar(
-    backgroundImage: AssetImage('assets/images/haan.png'),
+  return Container(
+    height: 80,
+    decoration:
+        const BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+    child: const Image(
+      image: AssetImage('assets/images/haan.png'),
+    ),
+
     // child: Image(image: AssetImage('assets/haan.png')),
     // backgroundColor: Colors.teal,
     // child: FittedBox(child: Image(image: AssetImage('../assets/haan.png'))

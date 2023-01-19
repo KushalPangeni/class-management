@@ -29,11 +29,11 @@ class _StudentDetailsState extends State<StudentDetails> {
     String username,
   ) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 2),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 4),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: Colors.teal[100],
+          borderRadius: BorderRadius.circular(18),
+          color: Colors.orange[50],
         ),
         child: ListTile(
           leading: CircleAvatar(child: Text('$no')),

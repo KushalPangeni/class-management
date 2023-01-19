@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Profile extends StatefulWidget {
   final String name;
@@ -41,6 +42,11 @@ class _ProfileState extends State<Profile> {
     final double screenwidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.teal,
+        systemOverlayStyle:
+            const SystemUiOverlayStyle(statusBarColor: Colors.teal),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

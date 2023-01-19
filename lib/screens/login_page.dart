@@ -44,24 +44,27 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.fromLTRB(8, 8, 0, 4),
                       child: Card(
                         color: Colors.teal[50],
-                        child: TextFormField(
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "Enter name";
-                            } else {
-                              return null;
-                            }
-                          },
-                          controller: namecontroller,
-                          decoration: const InputDecoration(
-                              hintText: ' User name',
-                              // labelText: 'User name',
-                              labelStyle:
-                                  TextStyle(color: Colors.black, fontSize: 18),
-                              // border: OutlineInputBorder(),
-                              border: InputBorder.none),
-                          keyboardType: TextInputType.name,
-                          // maxLength: 25,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                          child: TextFormField(
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "Enter name";
+                              } else {
+                                return null;
+                              }
+                            },
+                            controller: namecontroller,
+                            decoration: const InputDecoration(
+                                hintText: 'User name',
+                                // labelText: 'User name',
+                                labelStyle: TextStyle(
+                                    color: Colors.black, fontSize: 18),
+                                // border: OutlineInputBorder(),
+                                border: InputBorder.none),
+                            keyboardType: TextInputType.name,
+                            // maxLength: 25,
+                          ),
                         ),
                       ),
                     ),
@@ -72,32 +75,35 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.fromLTRB(8, 0, 0, 4),
                       child: Card(
                         color: Colors.teal[50],
-                        child: TextFormField(
-                          validator: (values) {
-                            if (values!.isEmpty) {
-                              return "Enter password";
-                            } else {
-                              return null;
-                            }
-                          },
-                          controller: passwordcontroller,
-                          decoration: const InputDecoration(
-                              hintText: ' Password',
-                              // labelText: 'Password',
-                              labelStyle:
-                                  TextStyle(color: Colors.black, fontSize: 18),
-                              // border: OutlineInputBorder(),
-                              border: InputBorder.none),
-                          keyboardType: TextInputType.name,
-                          // maxLength: 25,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                          child: TextFormField(
+                            validator: (values) {
+                              if (values!.isEmpty) {
+                                return "Enter password";
+                              } else {
+                                return null;
+                              }
+                            },
+                            controller: passwordcontroller,
+                            decoration: const InputDecoration(
+                                hintText: 'Password',
+                                // labelText: 'Password',
+                                labelStyle: TextStyle(
+                                    color: Colors.black, fontSize: 18),
+                                // border: OutlineInputBorder(),
+                                border: InputBorder.none),
+                            keyboardType: TextInputType.name,
+                            // maxLength: 25,
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
-                ElevatedButton(
-                  child: const Text('Submit'),
-                  onPressed: () {
+
+                InkWell(
+                  onTap: () {
                     setState(() {
                       final isValidForm = formKey.currentState!.validate();
                       if (isValidForm) {
@@ -129,11 +135,61 @@ class _LoginPageState extends State<LoginPage> {
                       // }
                     });
                   },
+                  child: Container(
+                    height: 40,
+                    width: 90,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(14)),
+                    child: const Center(
+                      child: Text(
+                        "Log In",
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ),
                 ),
-                //   TextButton.icon(
-                //       onPressed: () {},
-                //       icon: const Icon(Icons.home),
-                //       label: const Text('Home')),
+                // ElevatedButton(
+                //   style:
+                //       ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                //   child: const Text(
+                //     'Log In',
+                //     style: TextStyle(color: Colors.black),
+                //   ),
+                //   onPressed: () {
+                //     setState(() {
+                //       final isValidForm = formKey.currentState!.validate();
+                //       if (isValidForm) {
+                //         Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //             builder: (context) => const Dashboard(),
+                //           ),
+                //         );
+                //         // if (namecontroller.text == 'admin' &&
+                //         //     passwordcontroller.text == 'admin') {
+                //         //   Navigator.push(
+                //         //     context,
+                //         //     MaterialPageRoute(
+                //         //       builder: (context) => const Dashboard(),
+                //         //     ),
+                //         //   );
+                //       }
+                //       // else {
+                //       // reset1();
+                //       // showDialog(
+                //       //   context: context,
+                //       //   builder: ((context) {
+                //       //     return const AlertDialog(
+                //       //       title: Text('Wrong credentials!!!'),
+                //       //     );
+                //       //   }),
+                //       // );
+                //       // }
+                //     });
+                //   },
+                // ),
               ],
             ),
           ),

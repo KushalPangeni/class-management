@@ -33,7 +33,7 @@ class _TeacherDetailsState extends State<TeacherDetails> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: Colors.teal[100],
+          color: Colors.orange[50],
         ),
         child: ListTile(
           leading: CircleAvatar(child: Text('$no')),
