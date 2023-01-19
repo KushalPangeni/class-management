@@ -1,6 +1,7 @@
 # class_management
 
 A new Flutter project.
+Class management is a mobile app that keeps the records of students, teachers, classes, subjects, timetables that manages the class smoothly.
 
 ## Getting Started
 
